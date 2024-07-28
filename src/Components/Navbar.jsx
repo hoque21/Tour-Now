@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="p-1 flex items-center text-xl">
             <ul className="hidden sm:flex gap-10 items-center">
               <li className="py-4 ">
-                <NavLink  to="/" onClick={() => window.scrollTo(0, 0)}>
+                <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
                   Home
                 </NavLink>
               </li>
@@ -62,7 +62,10 @@ const Navbar = () => {
                 <div className="absolute left-0 top-full mt-2 z-50 hidden group-hover:block shadow-md text-black p-2 bg-white w-[150px]">
                   <ul>
                     {DropdownLinks.map((data) => (
-                      <li key={data.name} className="py-1">
+                      <li
+                        key={data.name}
+                        className="py-1 border-black  hover:bg-gray-200 last:border-b-0"
+                      >
                         <Link className="inline-block w-full" to={data.link}>
                           {data.name}
                         </Link>
@@ -84,7 +87,10 @@ const Navbar = () => {
         </div>
       </div>
       {showMenu && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu}>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={toggleMenu}
+        >
           <div
             className={`fixed top-0 left-0 w-64 h-full bg-white shadow-md transition-transform duration-300 transform ${
               showMenu ? "translate-x-0" : "-translate-x-full"
@@ -99,13 +105,25 @@ const Navbar = () => {
                 </div>
                 <hr className="my-2 border-black" />
                 <li className="py-2">
-                  <NavLink to="/about" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>
+                  <NavLink
+                    to="/about"
+                    onClick={() => {
+                      toggleMenu();
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     About
                   </NavLink>
                 </li>
                 {DropdownLinks.map((data) => (
                   <li key={data.name} className="py-2">
-                    <Link to={data.link} onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>
+                    <Link
+                      to={data.link}
+                      onClick={() => {
+                        toggleMenu();
+                        window.scrollTo(0, 0);
+                      }}
+                    >
                       {data.name}
                     </Link>
                   </li>

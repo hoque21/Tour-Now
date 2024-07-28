@@ -3,7 +3,10 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-      <p className='bg-secondary'></p>
+      <p className='bg-secondary'>
+        Footer
+        lo
+      </p>
     </div>
   )
 }
